@@ -1,11 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+     <!-- font awesome link start -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>English Janala</title>
+
+    <style>
+        .active{
+            background-color: #422ad5;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+    <header id="nav" class="bg-slate-100 hidde border-b border-gray-300 z-10 fixed w-full">
+        <nav class="max-w-11/12 mx-auto py-5  flex justify-between">
+            <div class="logo flex items-center">
+                <span class="font-bold">English</span>
+                <img src="assets/logo.png" alt="">
+                <span class="font-bold">জানালা</span>
+            </div>
+
+            <div class="button">
+                <div class="hidden md:block">
+                    <a href="#faq">
+                        <button class="btn  rounded-md border-2 border-[#422ad5] bg-transparent mx-2">
+                        <img src="assets/fa-circle-question.png" alt="">
+                        <span class="text-[#422ad5] font-bold">FAQ</span>
+                        </button>
+                    </a>
+                    <a href="#learn">
+                        <button onclick="location.href='#learn'" class="btn rounded-md border-2 border-[#422ad5] bg-transparent mx-2">
+                        <img src="assets/fa-book-open.png" alt="">
+                        <span class="text-[#422ad5] font-bold">Learn</span>
+                        </button>
+                    </a>
     
+                      <button id="logout-btn" class="btn rounded-md border-2 border-[#422ad5] bg-transparent mx-2">
+                        <img src="assets/fa-arrow-right-from-bracket.png" alt="">
+                        <span class="text-[#422ad5] font-bold">Logout</span>
+                      </button>
+                </div>
+
+                <!-- drop down menu -->
+
+                <div class="dropdown md:hidden">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle ">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="  menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-5 -ml-24  py-2 px-10 shadow">
+                      <li>
+                        <a href="#faq">
+                            <button class="btn  rounded-md border-2 border-[#422ad5] bg-transparent mx-2">
+                            <img src="assets/fa-circle-question.png" alt="">
+                            <span class="text-[#422ad5] font-bold">FAQ</span>
+                            </button>
+                        </a>
+                      <li>
+                        <a href="#learn">
+                            <button onclick="location.href='#learn'" class="btn rounded-md border-2 border-[#422ad5] bg-transparent mx-2">
+                            <img src="assets/fa-book-open.png" alt="">
+                            <span class="text-[#422ad5] font-bold">Learn</span>
+                            </button>
+                        </a>
+                      <li>
+                        <button id="logout-btn" class="btn rounded-md border-2 border-[#422ad5] bg-transparent mx-2">
+                            <img src="assets/fa-arrow-right-from-bracket.png" alt="">
+                            <span class="text-[#422ad5] font-bold">Logout</span>
+                          </button>
+                      </li>
+                    </ul>
+                  </div>
+                
+                 
+            </div>
+
+            
+
+        </nav>
+    </header>
+
+
+
+
+    <!-- main section -->
+    <main>
+
+
+        <!-- banner section -->
+        <div id="banner" class="banner max-w-11/12 mx-auto pt-24  py-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 py-5 items-center justify-between">
+                <div class="text">
+                    <h1 class="text-5xl font-bold"><span class="text-[#00bcff]">English</span> is Easy!!</h1>
+                    <p class="text-xl my-4">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+
+                    <!-- login form -->
+                    <form action="">
+                            
+                              <input type="text" id="input-name" class="input" placeholder="Name" required /> <br>
+                              
+                              <input id="input-pin" type="password" class="input my-4" placeholder="PIN (123456)" required /> <br>
+                              
+                              <button id="login-btn" class="btn bg-[#422ad5] text-white rounded-md">Get Started</button>
+                            
+                    </form>
+                              
+                </div>
+                <!-- image -->
+                 <div class="image text-right">
+                    <img class="w-auto" src="assets/hero-student.png" alt="">
+                 </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- vocabularies section -->
+         <div id="learn" class="hidden vocabularies max-w-11/12 mx-auto pt-24 py-5">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold">
+                    <span class="text-[#00bcff]">Let's</span>
+                    Learn Vocabularies
+                </h1>
+            </div>
+            <!-- category -->
+            <div id="category-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 justify-center gap-2 items-center">
+
+            </div>
+            <!-- cart -->
+             <div id="card-container" class=" py-5 md:py-20 mt-5 rounded-lg bg-slate-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5">
+                <!-- <span id="spiner" class=" mx-auto block loading loading-dots loading-xl"></span> -->
+              
+                <div class="text-center col-span-full">
+                    <p >আপনি এখনো কোন Lesson Select করেন নি</p>
+                    <h2 class="text-3xl mt-3">একটি Lesson Select করুন।</h2>
+                </div>
+            
+             </div>
+         </div>
+
+
+
+
+
+
+         <!-- faq section -->
+          <div id="faq" class="hidden faq max-w-11/12 mx-auto py-5">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold">
+                    <span class="text-[#00bcff]">Frequently</span>
+                    Asked Question
+                </h1>
+
+                <!-- accordion -->
+                <div>
+                    <div class="collapse collapse-plus bg-base-200 border border-base-300 text-left my-2">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title font-semibold">How do I create an account?</div>
+                        <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                    </div>
+                    <div class="collapse collapse-plus bg-base-200 border border-base-300 text-left my-2">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title font-semibold">How do I create an account?</div>
+                        <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                    </div>
+                    <div class="collapse collapse-plus bg-base-200 border border-base-300 text-left my-2">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title font-semibold">How do I create an account?</div>
+                        <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                    </div>
+                    <div class="collapse collapse-plus bg-base-200 border border-base-300 text-left my-2">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title font-semibold">How do I create an account?</div>
+                        <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                    </div>
+                    <div class="collapse collapse-plus bg-base-200 border border-base-300 text-left my-2">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title font-semibold">How do I create an account?</div>
+                        <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+                    </div>
+                </div>
+            
+            </div>
+          </div>
+
+    </main>
+
+    <!-- footer section -->
+    <footer id="footer" class="max-w-11/12 mx-auto py-5">
+        <div class="flex justify-between items-center">
+            <div class="footer-text">
+                <div class="footer-logo flex items-center">
+                    <span class="font-bold">English</span>
+                    <img src="assets/logo.png" alt="">
+                    <span class="font-bold">জানালা</span>
+                </div>
+
+                <h2 class="my-4 font-bold">ইংরেজি শিখুন সহজে</h2>
+                <p>Providing ED-Tech Applications since 2025</p>
+            </div>
+
+
+            <!-- footer icon -->
+            <div>
+                <h3 class="my-4">Follow</h3>
+                <ul class="inline-flex gap-5 items-center">
+                    <li><img src="assets/fb-thumb.png" alt="facebook"></li>
+                    <li><img src="assets/youtube-thumb.png" alt="Youtube"></li>
+                    <li><img src="assets/instagram-thumb.png" alt="Instagram"></li>
+                    <li><img src="assets/github-thumb.png" alt="Github"></li>
+                </ul>
+            </div>
+            
+        </div>
+    </footer>
+
+
+
+<!-- modal -->
+
+<dialog id="word_details" class="modal">
+  <div class="modal-box">
+    <div id="details-container">
+        
+    </div>
+    <div class="modal-action text-left">
+      <form method="dialog">
+        
+        <button class="btn bg-[#422ad5] text-white float-start">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
+
+
+    <script src="script/index.js"></script>
 </body>
 </html>
+
+
+
+
